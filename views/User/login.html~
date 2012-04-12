@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+<title>Fat Free CRM</title>
+<!-- users : new -->
+<link href="/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+<style></style>
+<script src="/javascripts/application.js" type="text/javascript"></script>
+
+
+<script>
+  //<![CDATA[
+    
+  //]]>
+</script>
+
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body>
+<div id='header'>
+<div id='welcome'>
+<a href="/login">Login</a> |
+<a href="/signup">Sign Up</a> |
+<a href="#" onclick="Modalbox.show($('about'), { title: this.title }); return false;" title="About Fat Free CRM">About</a>
+</div>
+<h3>
+
+<a href="/">Fat Free CRM</a>
+</h3>
+</div>
+
+<p id="flash" style="display:none;"></p>
+<div class='tabless'><div class='standalone'>
+<form accept-charset="UTF-8" action="/users" class="new_user" id="new_user" method="post" onsubmit="$$('#'+this.id+' input[type=&quot;submit&quot;]')[0].disabled = true"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class='title_tools'>Already signed up? <a href="/login">Login Now!</a></div>
+<div class='title'>Sign Up</div>
+
+<div class='section'>
+<div class='label'>Email:</div>
+
+<input id="user_email" name="user[email]" size="30" type="text" value="" />
+<div class='label'>Username:</div>
+<input id="user_username" name="user[username]" size="30" type="text" value="" />
+<div class='label'>Password:</div>
+<input id="user_password" name="user[password]" size="30" type="password" />
+<div class='label'>Confirm new password:</div>
+<input id="user_password_confirmation" name="user[password_confirmation]" size="30" type="password" />
+</div>
+<div class='buttonbar'>
+<input name="commit" type="submit" value="Sign Up" />
+</div>
+</form>
+</div>
+</div>
+
+<center><div id='footer'>
+Powered by <a href="http://www.fatfreecrm.com" data-popup="true">Fat Free CRM</a>
+v0.10.1-rc1 &copy; 2008-2012 by Michael Dvorkin
+|
+<img alt="Iconset_attribution" src="/assets/iconset_attribution-1ff72a2be9e88b8da29e1a753ca51fed.png" />
+Icons from the
+<a href="http://gentleface.com/free_icon_set.html">Gentleface Mono Icon Set</a>
+</div>
+<br>
+<div id='about' style='display:none;'>
+<h3>
+Fat Free CRM version
+<span class='cool'>v0.10.1-rc1</span>
+
+(mysql2)
+</h3>
+<p>
+Thank you for using Fat Free CRM! We appreciate your business and hope you enjoy using the software.
+</p>
+Fat Free CRM resources (links open a new window):
+<ul style='margin: 0px 0px 0px 15px'>
+<li>&raquo; <a href="http://www.fatfreecrm.com" data-popup="true">Home page</a></li>
+<li>&raquo; <a href="http://github.com/michaeldv/fat_free_crm/tree/master" data-popup="true">Project page</a></li>
+<li>&raquo; <a href="http://fatfreecrm.lighthouseapp.com" data-popup="true">Features and bugs</a></li>
+<li>&raquo; <a href="http://twitter.com/fatfreecrm" data-popup="true">Twitter commit updates</a></li>
+
+<li>&raquo; <a href="http://groups.google.com/group/fat-free-crm-users" data-popup="true">Discussion group for users</a></li>
+<li>&raquo; <a href="http://groups.google.com/group/fat-free-crm-dev" data-popup="true">Discussion group for developers</a></li>
+</ul>
+<br>
+</div>
+
+</center>
+
+<script type='text/javascript'>
+
+
+
+
+</script>
+</body>
+</html>
+

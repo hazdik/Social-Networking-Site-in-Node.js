@@ -1,0 +1,243 @@
+<body>
+<div id='header'>
+<div id='welcome'>
+Welcome,
+<span id='welcome_username'>darhamid</span><span>!&nbsp;&nbsp;</span><a href="#" id="jumper">Quick find</a> |
+<a href="/profile">Profile</a> |
+<a href="/logout" data-method="delete" rel="nofollow">Logout</a>
+<div id='jumpbox' style='display:none;'>
+<span id='jumpbox_menu'><a class="" href="#">Campaigns</a> | <a class="" href="#">Accounts</a> | <a class="selected" href="#" >Leads</a> | <a class="" href="#">Contacts</a> | <a class="" href="#">Opportunities</a></span>
+<span id='jumpbox_label' style='display:none;'></span>
+<br>
+<input autocomplete="off" id="auto_complete_query" name="auto_complete_query" style="width: 310px" type="text" />
+<div class='auto_complete' id='auto_complete_dropdown'></div>
+</div>
+</div>
+<h3>
+<a href="/">Fat Free CRM</a>
+</h3>
+</div>
+<div id='tabs'>
+<ul>
+<li>
+<a href="/" class=""><img alt="Dashboard" src="/images/dashboard_active-11ba0365b57628834d203df04a901dc4.png" />
+Dashboard
+</a></li>
+<li>
+<a href="/tasks" class=""><img alt="Tasks" src="/images/tasks-34761652e66bedc92dec666f5cbf600d.png" />
+Tasks
+</a></li>
+<li>
+<a href="/campaigns" class=""><img alt="Campaigns" src="/images/campaigns-80ad99b4a444383f3c07b275e29114cf.png" />
+Campaigns
+</a></li>
+<li>
+<a href="/leads" class="active"><img alt="Leads_active" src="/images/leads-9e70ca03ece9d2a9587ef3fcceaccca9.png" />
+Leads
+</a></li>
+<li>
+<a href="/accounts" class=""><img alt="Accounts" src="/images/accounts-37fd43792d92f9cd23ccd363584a83af.png" />
+Accounts
+</a></li>
+<li>
+<a href="/contacts" class=""><img alt="Contacts" src="/images/contacts-f3592054f3b432aba82387e4917ce103.png" />
+Contacts
+</a></li>
+<li>
+<a href="/opportunities" class=""><img alt="Opportunities" src="/images/opportunities-7ccdf9bbbddbefc947cb0e506ec1893f.png" />
+Opportunities
+</a></li>
+</ul>
+</div>
+<p id="flash">Can't delete the lead since it's no longer available.</p><script type="text/javascript">crm.flash('warning', false)</script>
+<table cellpadding='0' cellspacing='0' class='tabbed' height='100%' width='100%'>
+<tr>
+<td class='sidebar' id='sidebar' valign='top'>
+<div class='filters' id='filters'>
+<h4>Search leads</h4>
+<div style='margin: 0px 0px 6px 0px'>
+<input id="query" name="query" size="23" type="text" />
+</div>
+<script>
+  //<![CDATA[
+    new Form.Element.Observer('query', 1.5, function(element, value) {
+      crm.search(value, 'leads')
+    });
+  //]]>
+</script>
+<div class='check_box' style='border-bottom: 1px silver dotted;'>
+<div style='float:right;'>
+1
+</div>
+<input checked="checked" id="new" name="status[]" onclick="new Ajax.Request('/leads/filter', {asynchronous:true, evalScripts:true, onComplete:function(request){$('loading').hide()}, onLoading:function(request){$('loading').show()}, parameters:&quot;status=&quot; + $$(&quot;input[name='status[]']&quot;).findAll(function (el) { return el.checked }).pluck(&quot;value&quot;)})" type="checkbox" value="new" />
+<label for="new">New</label>
+</div>
+<div class='check_box' style='border-bottom: 1px silver dotted;'>
+<div style='float:right;'>
+0
+</div>
+<input id="contacted" name="status[]" onclick="new Ajax.Request('/leads/filter', {asynchronous:true, evalScripts:true, onComplete:function(request){$('loading').hide()}, onLoading:function(request){$('loading').show()}, parameters:&quot;status=&quot; + $$(&quot;input[name='status[]']&quot;).findAll(function (el) { return el.checked }).pluck(&quot;value&quot;)})" type="checkbox" value="contacted" />
+<label for="contacted">Contacted</label>
+</div>
+<div class='check_box' style='border-bottom: 1px silver dotted;'>
+<div style='float:right;'>
+0
+</div>
+<input id="converted" name="status[]" onclick="new Ajax.Request('/leads/filter', {asynchronous:true, evalScripts:true, onComplete:function(request){$('loading').hide()}, onLoading:function(request){$('loading').show()}, parameters:&quot;status=&quot; + $$(&quot;input[name='status[]']&quot;).findAll(function (el) { return el.checked }).pluck(&quot;value&quot;)})" type="checkbox" value="converted" />
+<label for="converted">Converted</label>
+</div>
+<div class='check_box' style='border-bottom: 1px silver dotted;'>
+<div style='float:right;'>
+1
+</div>
+<input checked="checked" id="rejected" name="status[]" onclick="new Ajax.Request('/leads/filter', {asynchronous:true, evalScripts:true, onComplete:function(request){$('loading').hide()}, onLoading:function(request){$('loading').show()}, parameters:&quot;status=&quot; + $$(&quot;input[name='status[]']&quot;).findAll(function (el) { return el.checked }).pluck(&quot;value&quot;)})" type="checkbox" value="rejected" />
+<label for="rejected">Rejected</label>
+</div>
+<div class='check_box' style='border-bottom: 1px silver dotted;'>
+<div style='float:right;'>
+0
+</div>
+<input id="other" name="status[]" onclick="new Ajax.Request('/leads/filter', {asynchronous:true, evalScripts:true, onComplete:function(request){$('loading').hide()}, onLoading:function(request){$('loading').show()}, parameters:&quot;status=&quot; + $$(&quot;input[name='status[]']&quot;).findAll(function (el) { return el.checked }).pluck(&quot;value&quot;)})" type="checkbox" value="other" />
+<label for="other">Other</label>
+</div>
+<div class='check_box'>
+<div style='float:right;'>
+<b>2</b>
+</div>
+<b>Total Leads</b>
+</div>
+</div>
+<div class='panel' id='recently'>
+<div class='caption'>Recent Items</div>
+<li class=''>
+<dt><a href="http://demo.fatfreecrm.com/contacts/143" title="ali keskin">ali keskin</a></dt>
+<tt>Contact:</tt>
+</li>
+</div>
+</td>
+<td class='main' id='main' valign='top'>
+<div class='title_tools'>
+<a href="/leads/new?cancel=false" data-remote="true" onclick="this.href = this.href.replace(/cancel=(true|false)/,'cancel='+ Element.visible('create_lead'));"><span class="arrow" id="create_lead_arrow">&#9658;</span>Create Lead</a> | 
+<a href="/leads/options?cancel=false" data-remote="true" onclick="this.href = this.href.replace(/cancel=(true|false)/,'cancel='+ Element.visible('options'));"><span class="arrow" id="options_arrow">&#9658;</span>Options</a>
+</div>
+<div class='title'>
+<span id='create_lead_title'>Leads</span>
+<img alt="Loading" height="16" id="loading" src="/assets/loading-f694fa3f9fbceffa1d8cf286d06d5e91.gif" style="display: none;" width="16" />
+</div>
+<div class='remote' id='options' style='display:none;'></div>
+<div class='remote' id='advanced_search' style='display:none;'>
+</div>
+<div class='remote' id='create_lead' style='display:none;'></div>
+<div class='list' id='leads'>
+<li class='lead' id='lead_131' onmouseout="this.style.background='white'; $('tools_lead_131').style.visibility='hidden'" onmouseover="this.style.background='seashell'; $('tools_lead_131').style.visibility='visible'">
+<div class='new strip'>New</div>
+<div class='tools' id='tools_lead_131' style='visibility:hidden;'>
+<a href="/leads/131/edit" data-remote="true" onclick="this.href = this.href.split('?')[0] + '?previous='+crm.find_form('edit_lead');">Edit</a> | 
+<a href="/leads/131/convert" data-method="get" data-remote="true" with="{ previous: crm.find_form('edit_lead') }">Convert</a> | 
+<a href="/leads/131/reject" data-method="put" data-remote="true" rel="nofollow">Reject!</a> | 
+
+<a href="/leads/131" data-method="delete" data-remote="true" onclick="new Effect.Highlight(&quot;lead_131&quot;,{startcolor:'#ffe4e1'});" rel="nofollow">Delete!</a>
+</div>
+<div class='indent'>
+<a href="/leads/131">Sean Jones</a>
+<tt>
+</tt>
+<dt>
+<font color="gainsboro">&#9733;&#9733;&#9733;&#9733;&#9733;</font> | 
+<a href="mailto:seanjones@gmail.com" title="seanjones@gmail.com">seanjones@gmail.com</a> | 
+phone: 9548756321 | 
+added about 13 hours ago
+</dt>
+</div>
+</li>
+<li class='lead' id='lead_105' onmouseout="this.style.background='white'; $('tools_lead_105').style.visibility='hidden'" onmouseover="this.style.background='seashell'; $('tools_lead_105').style.visibility='visible'">
+<div class='rejected strip'>Rejected</div>
+<div class='tools' id='tools_lead_105' style='visibility:hidden;'>
+<a href="/leads/105/edit" data-remote="true" onclick="this.href = this.href.split('?')[0] + '?previous='+crm.find_form('edit_lead');">Edit</a> | 
+<font color='silver'>Convert</font> | 
+<font color='silver'>Reject</font> | 
+
+<a href="/leads/105" data-method="delete" data-remote="true" onclick="new Effect.Highlight(&quot;lead_105&quot;,{startcolor:'#ffe4e1'});" rel="nofollow">Delete!</a>
+</div>
+<div class='indent'>
+<a href="/leads/105">BBB bbb</a>
+<tt>
+</tt>
+<dt>
+<font color="gainsboro"></font> | 
+added 28 days ago
+</dt>
+</div>
+</li>
+</div>
+<div id='paginate'>
+</div>
+<div id='export'><a href="/leads.xls" title="Export to Excel">XLS</a> | <a href="/leads.csv" title="Export to comma-delimited file format (including deleted records)">CSV</a> | <a href="/leads.rss?authentication_credentials=R5Pjrp0AjysuzhuNcdfL" title="RSS feed">RSS</a> | <a href="/leads.atom?authentication_credentials=R5Pjrp0AjysuzhuNcdfL" title="Atom feed">ATOM</a>
+</div>
+</td>
+</tr>
+</table>
+<div id='footer'>
+Powered by <a href="http://www.fatfreecrm.com" data-popup="true">Fat Free CRM</a>
+v0.10.1-rc1 &copy; 2008-2012 by Michael Dvorkin
+|
+<img alt="Iconset_attribution" src="/assets/iconset_attribution-1ff72a2be9e88b8da29e1a753ca51fed.png" />
+Icons from the
+<a href="http://gentleface.com/free_icon_set.html">Gentleface Mono Icon Set</a>
+|
+<a href="#" onclick="Modalbox.show($('about'), { title: this.title }); return false;" title="About Fat Free CRM">About Fat Free CRM</a>
+</div>
+<br>
+<div id='about' style='display:none;'>
+<h3>
+Fat Free CRM version
+<span class='cool'>v0.10.1-rc1</span>
+</h3>
+<p>
+Thank you for using Fat Free CRM! We appreciate your business and hope you enjoy using the software.
+</p>
+Fat Free CRM resources (links open a new window):
+<ul style='margin: 0px 0px 0px 15px'>
+<li>&raquo; <a href="http://www.fatfreecrm.com" data-popup="true">Home page</a></li>
+<li>&raquo; <a href="http://github.com/michaeldv/fat_free_crm/tree/master" data-popup="true">Project page</a></li>
+<li>&raquo; <a href="http://fatfreecrm.lighthouseapp.com" data-popup="true">Features and bugs</a></li>
+<li>&raquo; <a href="http://twitter.com/fatfreecrm" data-popup="true">Twitter commit updates</a></li>
+<li>&raquo; <a href="http://groups.google.com/group/fat-free-crm-users" data-popup="true">Discussion group for users</a></li>
+<li>&raquo; <a href="http://groups.google.com/group/fat-free-crm-dev" data-popup="true">Discussion group for developers</a></li>
+</ul>
+<br>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+_translations = {"Now":"Now","Today":"Today","Clear":"Clear","OK":"OK"};
+Date.weekdays = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+Date.months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+//]]>
+</script>
+<script type='text/javascript'>
+document.observe("dom:loaded", function() {
+  new crm.Popup({
+    trigger     : "jumper",
+    target      : "jumpbox",
+    under       : "welcome",
+    appear      : 0.3,
+    fade        : 0.3,
+    before_show : function() {
+      $("jumper").className = "selected";
+      $("jumpbox_label").innerHTML = ""
+      $("jumpbox_label").hide();
+      $("jumpbox_menu").show();
+      crm.auto_complete("leads");
+    },
+    after_show  : function() {
+      $("auto_complete_query").focus();
+    },
+    after_hide  : function() {
+      $("jumper").className = "";
+    }
+  });
+});
+</script>
+</body>
+</html>
+
